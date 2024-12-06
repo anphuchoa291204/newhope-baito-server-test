@@ -33,7 +33,7 @@ connectToDatabase()
 
 // CHECKPOINT: 3. Serve Swagger documentation
 
-const CSS_URL = "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.3.0/swagger-ui.min.css"
+const CSS_URL = "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/5.18.2/swagger-ui.min.css"
 
 app.use(
 	"/api-docs",
@@ -43,9 +43,12 @@ app.use(
 	},
 	swaggerUI.serve,
 	swaggerUI.setup(swaggerSpec, {
+		swaggerOptions: {
+			docExpansion: "none",
+		},
 		explorer: true,
-		customCss:
-			".swagger-ui .opblock .opblock-summary-path-description-wrapper { align-items: center; display: flex; flex-wrap: wrap; gap: 0 10px; padding: 0 10px; width: 100%; }",
+		// customCss:
+		// 	".swagger-ui .opblock .opblock-summary-path-description-wrapper { align-items: center; display: flex; flex-wrap: wrap; gap: 0 10px; padding: 0 10px; width: 100%; }",
 		customCssUrl: CSS_URL,
 	})
 )
