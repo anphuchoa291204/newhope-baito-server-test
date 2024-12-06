@@ -33,6 +33,8 @@ connectToDatabase()
 
 // CHECKPOINT: 3. Serve Swagger documentation
 
+const CSS_URL = "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.3.0/swagger-ui.min.css"
+
 app.use(
 	"/api-docs",
 	swaggerUI.serve,
@@ -41,6 +43,7 @@ app.use(
 			docExpansion: "none",
 		},
 		explorer: true,
+		customCssUrl: CSS_URL,
 	})
 )
 
