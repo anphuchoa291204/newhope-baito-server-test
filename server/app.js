@@ -39,9 +39,6 @@ app.use(
 	"/api-docs",
 	swaggerUI.serve,
 	swaggerUI.setup(swaggerSpec, {
-		swaggerOptions: {
-			docExpansion: "none",
-		},
 		explorer: true,
 		customCssUrl: CSS_URL,
 	})
