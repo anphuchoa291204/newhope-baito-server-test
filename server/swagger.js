@@ -23,10 +23,6 @@ const options = {
 				url: "http://localhost:8080/",
 				description: "Development server",
 			},
-			{
-				url: "https://newhope-baito-test.vercel.app",
-				description: "Production server",
-			},
 		],
 		// Add security schemes
 		components: {
