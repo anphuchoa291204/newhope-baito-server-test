@@ -37,6 +37,10 @@ const CSS_URL = "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.3.0/swagger
 
 app.use(
 	"/api-docs",
+	(req, res, next) => {
+		console.log("Swagger spec:", JSON.stringify(swaggerSpec, null, 2))
+		next()
+	},
 	swaggerUI.serve,
 	swaggerUI.setup(swaggerSpec, {
 		explorer: true,
